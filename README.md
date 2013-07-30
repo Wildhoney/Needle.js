@@ -1,7 +1,7 @@
 Needle.js
 ============
 
-Isolated concept of <a href="http://docs.angularjs.org/api/AUTO.$injector" target="_blank">Angular's $invoke</a>.
+Isolated concept of <a href="http://docs.angularjs.org/api/AUTO.$injector" target="_blank">Angular's $invoke</a> using <a href="http://en.wikipedia.org/wiki/Dependency_injection" target="_blank">dependency injection</a> for JavaScript constructor methods.
 
 Usage
 ------------
