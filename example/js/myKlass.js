@@ -16,12 +16,23 @@
         return {
 
             /**
+             * @property _name
+             * @type {String}
+             * @default ''
+             * @private
+             */
+            _name: '',
+
+            constructor: function(name) {
+                this._name = name;
+            },
+
+            /**
              * @method formatName
-             * @param name {String}
              * @return {String}
              */
-            formatName: function formatName(name) {
-                return $textDecorator.format(name);
+            formatName: function formatName() {
+                return $textDecorator.format(this._name);
             }
 
         };
@@ -59,7 +70,7 @@
     })();
 
     // Invoke our class with its dependencies injected.
-    var name = needle.invoke(NameKlass);
-    console.log(name.formatName('Adam'));
+    var name = needle.invoke(NameKlass, 'Adam');
+    console.log(name.formatName());
 
 })(window.needle);
