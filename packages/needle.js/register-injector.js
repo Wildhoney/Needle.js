@@ -1,5 +1,5 @@
 /**
- * @module needle
+ * @module Needle
  * @method registerInjector
  * @param label {String}
  * @param klass {Object,String}

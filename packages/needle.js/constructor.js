@@ -1,5 +1,5 @@
 /**
- * @module needle
+ * @module Needle
  * @constructor
  */
 window.Needle = function() {

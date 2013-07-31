@@ -1,5 +1,5 @@
 /**
- * @module needle
+ * @module Needle
  * @method invoke
  * @param klass {Object,String}
  * Responsible for instantiating a new object, injecting any required dependencies.
@@ -19,7 +19,7 @@ window.Needle.prototype.invoke = function(klass) {
         }
 
         // Find the name from the dependency, and then locate the relevant injector.
-        var name        = dependencies[dependency].replace(/$/, ''),
+        var name        = dependencies[dependency].replace(/\$/, ''),
             injector    = this._injectors[name];
 
         // Perform a check to ensure that the injector has been registered.
