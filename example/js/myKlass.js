@@ -23,7 +23,12 @@
              */
             _name: '',
 
-            constructor: function(name) {
+            /**
+             * @method constructor
+             * @param name {String}
+             * @return {void}
+             */
+            constructor: function constructor(name) {
                 this._name = name;
             },
 
