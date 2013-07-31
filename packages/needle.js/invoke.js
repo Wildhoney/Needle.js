@@ -46,6 +46,12 @@ window.Needle.prototype.invoke = function(klass, constructorArgs) {
     // passing in the arguments where necessary.
     var instance = klass.apply(null, dependencyArgs);
 
+    if (klass.prototype) {
+        // If we have a `prototype` property attached to the function, then we'll need to mimic
+        // the behaviour of JavaScript's `new` construct and apply the `__proto__` ourselves.
+        instance.__proto__ = klass.prototype;
+    }
+
     if (typeof instance.constructor === 'function') {
         // Invoke the function's `constructor` method if it exists.
         instance.constructor.call(instance, constructorArgs);

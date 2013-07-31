@@ -45,6 +45,22 @@
     };
 
     /**
+     * @property prototype
+     * @type {Object}
+     */
+    NameKlass.prototype = {
+
+        /**
+         * @method getName
+         * @return {String}
+         */
+        getName: function getName() {
+            return this._name;
+        }
+
+    };
+
+    /**
      * @method Decorator
      * Wrap the decorator in a closure to prove that the `NameKlass` isn't getting the
      * decorator from the scope.
@@ -76,6 +92,7 @@
 
     // Invoke our class with its dependencies injected.
     var name = needle.invoke(NameKlass, 'Adam');
-    console.log(name.formatName());
+    console.log('Using Injector: ' + name.formatName());
+    console.log('Using Prototype: ' + name.getName());
 
 })(window.needle);
