@@ -7,14 +7,23 @@
  */
 window.Needle.prototype.invoke = function(klass) {
 
-    // Find the dependencies from the object's definition.
+    // Transform the function's definition into a string so that we can parse its dependencies.
+    var functionDefinition      = klass.toString().trim();
+
+    // Find the section of the defined function where the arguments are specified.
+    var declarationExtractor    = new RegExp('^function [^{]+', 'ig'),
+        declaration             = functionDefinition.match(declarationExtractor)[0].trim();
+
+    // Find the dependencies from the function's arguments.
     var extractor       = new RegExp('(\\$[a-z0-9_]+)', 'ig'),
-        dependencies    = klass.toString().match(extractor),
+        dependencies    = declaration.match(extractor),
         args            = [];
 
+    // Iterate over each defined dependency.
     for (var dependency in dependencies) {
 
         if (!dependencies.hasOwnProperty(dependency)) {
+            // The usual suspect...
             continue;
         }
 
@@ -24,11 +33,7 @@ window.Needle.prototype.invoke = function(klass) {
 
         // Perform a check to ensure that the injector has been registered.
         if (typeof injector === 'undefined') {
-
-            // If it hasn't then we'll throw an error to let the developer know.
-            console.error('Injector has not been registered: ' + name);
             continue;
-
         }
 
         // Otherwise we have the injector, so we can append it to the eventual arguments.

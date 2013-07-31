@@ -18,7 +18,7 @@
             /**
              * @method formatName
              * @param name {String}
-             * @returns {String}
+             * @return {String}
              */
             formatName: function formatName(name) {
                 return $textDecorator.format(name);
@@ -45,7 +45,7 @@
             /**
              * @method format
              * @param name
-             * @returns {String}
+             * @return {String}
              */
             format: function format(name) {
                 return name.toUpperCase();
