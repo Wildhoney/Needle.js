@@ -7,6 +7,4 @@
  */
 window.Needle.prototype.invoke = function(klass) {
 
-
-
 };
