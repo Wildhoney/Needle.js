@@ -3,7 +3,7 @@
  * @param needle {Object}
  * @return {void}
  */
-(function Main(needle) {
+window.Main = (function Main(needle) {
 
     /**
      * @method NameKlass
@@ -90,9 +90,29 @@
 
     })();
 
+    /**
+     * @method logAndInsertIntoDOM
+     * @param message {String}
+     * For debugging purposes ONLY.
+     * @return {void}
+     */
+    var logAndInsertIntoDOM = function logAndInsertIntoDOM(message) {
+
+        var ul = document.querySelector('ul'),
+            li = document.createElement('li');
+
+        li.innerHTML = message;
+        ul.appendChild(li);
+        console.log(message);
+    };
+
     // Invoke our class with its dependencies injected.
     var name = needle.invoke(NameKlass, 'Adam');
-    console.log('Using Injector: ' + name.formatName());
-    console.log('Using Prototype: ' + name.getName());
+    logAndInsertIntoDOM('Using Injector: ' + name.formatName());
+    logAndInsertIntoDOM('Using Prototype: ' + name.getName());
 
-})(window.needle);
+});
+
+document.addEventListener('DOMContentLoaded', function DOMContentLoaded() {
+    window.Main(window.needle);
+}, false);
