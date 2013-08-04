@@ -34,6 +34,7 @@ window.Needle.prototype.invoke = function invoke(klass, constructorArgs) {
 
         // Perform a check to ensure that the injector has been registered.
         if (typeof injector === 'undefined') {
+            console.error('NEEDLE.JS - Invalid dependency: ' + name);
             continue;
         }
 
