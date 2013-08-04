@@ -106,8 +106,13 @@ window.Main = (function Main(needle) {
         console.log(message);
     };
 
+    // Apply `Function.prototype.invoke`.
+    needle.applyPrototypes();
+
     // Invoke our class with its dependencies injected.
-    var name = needle.invoke(NameKlass, 'Adam');
+//    var name = needle.invoke(NameKlass, 'Adam');
+    var name = NameKlass.invoke('Adam');
+
     logAndInsertIntoDOM('Using Injector: ' + name.formatName());
     logAndInsertIntoDOM('Using Prototype: ' + name.getName());
 
