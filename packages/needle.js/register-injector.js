@@ -6,7 +6,7 @@
  * Responsible for registering an injector.
  * @return {void}
  */
-window.Needle.prototype.registerInjector = function(label, klass) {
+window.Needle.prototype.registerInjector = function registerInjector(label, klass) {
 
     this._injectors[label] = klass;
 

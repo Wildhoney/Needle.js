@@ -60,19 +60,3 @@ window.Needle.prototype.invoke = function invoke(klass, constructorArgs) {
     return instance;
 
 };
-
-/**
- * @module needle
- * @method invoke
- * @param klass {Function}
- * Responsible for extracting the function's parameter names.
- * @return {void}
- */
-window.Needle.prototype.getParams = function getParams(klass) {
-
-    var regExp  = new RegExp('((\/\/.*$)|(\/\*[\s\S]*?\*\/))', 'mg'),
-        string  = klass.toString().replace(regExp);
-
-    return string.slice(string.indexOf('(')+1, string.indexOf(')')).match(/([^\s,]+)/g);
-
-};
