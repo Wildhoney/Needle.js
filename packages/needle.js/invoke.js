@@ -53,8 +53,16 @@ window.Needle.prototype.invoke = function invoke(klass, constructorArgs) {
     }
 
     if (typeof instance.constructor === 'function') {
+
+        if (!Array.isArray(constructorArgs)) {
+            // If the constructor's arguments aren't an actual array, then we'll
+            // need to convert the arguments into a valid array.
+            constructorArgs = Array.prototype.slice.call(arguments, 1);
+        }
+
         // Invoke the function's `constructor` method if it exists.
-        instance.constructor.call(instance, constructorArgs);
+        instance.constructor.apply(instance, constructorArgs);
+
     }
 
     return instance;

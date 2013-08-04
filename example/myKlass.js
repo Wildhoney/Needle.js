@@ -25,11 +25,12 @@ window.Main = (function Main(needle) {
 
             /**
              * @method constructor
-             * @param name {String}
+             * @param firstName {String}
+             * @param surname {String}
              * @return {void}
              */
-            constructor: function constructor(name) {
-                this._name = name;
+            constructor: function constructor(firstName, surname) {
+                this._name = [firstName, surname].join(' ');
             },
 
             /**
@@ -110,8 +111,8 @@ window.Main = (function Main(needle) {
     needle.applyPrototypes();
 
     // Invoke our class with its dependencies injected.
-//    var name = needle.invoke(NameKlass, 'Adam');
-    var name = NameKlass.invoke('Adam');
+//    var name = needle.invoke(NameKlass, 'Adam', 'Timberlake');
+    var name = NameKlass.invoke('Adam', 'Timberlake');
 
     logAndInsertIntoDOM('Using Injector: ' + name.formatName());
     logAndInsertIntoDOM('Using Prototype: ' + name.getName());

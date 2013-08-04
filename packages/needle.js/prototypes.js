@@ -12,7 +12,7 @@ window.Needle.prototype.applyPrototypes = function applyPrototypes() {
      * Responsible for taking the function and invoking it with its arguments.
      */
     Function.prototype.invoke = function invoke(constructorArgs) {
-        return window.needle.invoke(this, constructorArgs);
+        return window.needle.invoke(this, Array.prototype.slice.call(arguments, 0));
     };
 
 };
