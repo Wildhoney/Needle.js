@@ -6,6 +6,17 @@
  */
 window.Needle.prototype.applyPrototypes = function applyPrototypes() {
 
+    // Determine if the `invoke` function on the `Function.prototype` already exists.
+    // If it does we'll throw an exception.
+    if (typeof Function.prototype.invoke !== 'undefined') {
+
+        throw {
+            name: "Already Defined",
+            message: "Method `invoke` has already been defined on `Function.prototype`."
+        };
+
+    }
+
     /**
      * @method invoke
      * @param constructorArgs {Array}
