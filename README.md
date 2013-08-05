@@ -34,3 +34,20 @@ var NameService = function() {
 }
 NameService.invoke('Bob', 'Jack', 'Alan');
 ```
+
+Getting Started
+------------
+
+To install Needle.js you need <a href="http://gruntjs.com/">Grunt</a>: `npm install -g grunt`. You'll also need <a href="https://npmjs.org/">npm</a>.
+
+Installing all of the Needle's dependencies is then quite simple: `npm install`.
+
+Once you've installed the dependencies and Grunt you can:
+
+ * Run all tests with `grunt tests`;
+ * Create a build with `grunt`;
+
+Tests
+------------
+
+All tests are written in <a href="http://pivotal.github.io/jasmine/">Jasmine</a> and can be run with `grunt tests`.
