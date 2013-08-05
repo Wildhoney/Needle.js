@@ -11,7 +11,7 @@ window.Main = (function Main(needle) {
      * @return {Object}
      * @constructor
      */
-    var NameKlass = function NameKlass($textDecrator) {
+    var NameKlass = function NameKlass($textDecorator) {
 
         return {
 

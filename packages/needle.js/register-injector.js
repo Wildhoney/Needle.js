@@ -11,3 +11,15 @@ window.Needle.prototype.registerInjector = function registerInjector(label, klas
     this._injectors[label] = klass;
 
 };
+
+/**
+ * @module Needle
+ * @method getInjectors
+ * Returns a list of all registered injectors.
+ * @return {Object}
+ */
+window.Needle.prototype.getInjectors = function getInjectors() {
+
+    return this._injectors;
+
+};

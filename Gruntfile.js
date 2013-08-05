@@ -16,8 +16,18 @@ module.exports = function(grunt) {
             build: {
                 src: ['packages/needle.js/constructor.js', 'packages/needle.js/invoke.js',
                       'packages/needle.js/register-injector.js', 'packages/needle.js/prototypes.js',
-                    'packages/needle.js/main.js'],
+                      'packages/needle.js/main.js'],
                 dest: 'dist/<%= pkg.name %>.min.js'
+            }
+        },
+        jasmine: {
+            pivotal: {
+                src: ['packages/needle.js/constructor.js', 'packages/needle.js/invoke.js',
+                      'packages/needle.js/register-injector.js', 'packages/needle.js/prototypes.js',
+                      'packages/needle.js/main.js'],
+                options: {
+                    specs: 'tests/spec.js'
+                }
             }
         }
     });
@@ -25,8 +35,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-jshint');
 
-    grunt.registerTask('test', ['jshint']);
-    grunt.registerTask('force-build', ['uglify']);
-    grunt.registerTask('default', ['jshint', 'uglify']);
+    grunt.registerTask('test', ['jshint', 'jasmine']);
+    grunt.registerTask('default', ['jshint', 'jasmine', 'uglify']);
 
 };
