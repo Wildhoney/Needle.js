@@ -1,9 +1,5 @@
 describe('Needle.js', function() {
 
-    beforeEach(function() {
-
-    });
-
     describe('Injector', function() {
 
         it('Can register injectors.', function() {
@@ -75,6 +71,7 @@ describe('Needle.js', function() {
     describe('Prototype', function() {
 
         it('Can set the `invoke` method on `Function.prototype`', function() {
+            expect(typeof function() {}.invoke).toEqual('undefined');
             needle.applyPrototypes();
             expect(typeof function() {}.invoke).toEqual('function');
         });
