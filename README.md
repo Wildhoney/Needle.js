@@ -44,10 +44,10 @@ Installing all of the Needle's dependencies is then quite simple: `npm install`.
 
 Once you've installed the dependencies and Grunt you can:
 
- * Run all tests with `grunt tests`;
+ * Run all tests with `grunt test`;
  * Create a build with `grunt`;
 
 Tests
 ------------
 
-All tests are written in <a href="http://pivotal.github.io/jasmine/">Jasmine</a> and can be run with `grunt tests`.
+All tests are written in <a href="http://pivotal.github.io/jasmine/">Jasmine</a> and can be run with `grunt test`.
