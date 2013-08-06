@@ -30,6 +30,23 @@ describe('Needle.js', function() {
             expect(typeof exampleInjector[1]).toEqual('function');
         });
 
+        it('Can inject dependencies into a commented helper.', function() {
+            needle.registerInjector('Example', function() {});
+            var exampleInjector = needle.invoke(function(/*Example Arg: */ $Example) { return $Example; });
+            expect(exampleInjector).toBeDefined();
+            expect(typeof exampleInjector).toEqual('function');
+        });
+
+        it('Can inject two dependencies into a commented helper.', function() {
+            needle.registerInjector('Example', function() {});
+            needle.registerInjector('OtherExample', function() {});
+            var exampleInjector = needle.invoke(/* Mmmkay */ function(/*Example Arg: */ $Example/*After... */, /** Another comment...**/$OtherExample) { return [$Example, $OtherExample]; });
+            expect(exampleInjector[0]).toBeDefined();
+            expect(typeof exampleInjector[0]).toEqual('function');
+            expect(exampleInjector[1]).toBeDefined();
+            expect(typeof exampleInjector[1]).toEqual('function');
+        });
+
     });
 
     describe('Inheritance', function() {
