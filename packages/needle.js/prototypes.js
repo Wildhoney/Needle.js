@@ -4,7 +4,7 @@
  * Responsible for adding the `invoke` method into Function.prototype.
  * @return {void}
  */
-window.Needle.prototype.applyPrototypes = function applyPrototypes() {
+Needle.prototype.applyPrototypes = function applyPrototypes() {
 
     // Determine if the `invoke` function on the `Function.prototype` already exists.
     // If it does we'll throw an exception.

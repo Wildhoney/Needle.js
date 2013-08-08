@@ -2,7 +2,7 @@
  * @module Needle
  * @constructor
  */
-window.Needle = function init() {
+Needle = function init() {
 
     /**
      * @property _injectors
