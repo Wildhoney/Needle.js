@@ -7,7 +7,7 @@ Isolated concept of <a href="http://docs.angularjs.org/api/AUTO.$injector" targe
 Flow
 ------------
 
-<img src="http://i.imgur.com/dOEedv2.png" alt="Needle.js Flow" />
+<img src="http://i.imgur.com/6BktN5T.png" alt="Needle.js Flow" />
 
  * Any `constructor` method on the <i>class</i> will be invoked, passing the args as individual args (not an array);
  * Any `prototype` property defined on the <i>class</i> will be instantiated and set to `__proto__` to configure the prototype chain;
