@@ -4,6 +4,8 @@ Needle.js
 
 Isolated concept of <a href="http://docs.angularjs.org/api/AUTO.$injector" target="_blank">Angular's $injector</a> using <a href="http://en.wikipedia.org/wiki/Dependency_injection" target="_blank">dependency injection</a> and <a href="http://en.wikipedia.org/wiki/Reflection_(computer_programming)" target="_blank">reflection</a> for JavaScript constructors.
 
+Needle is <strong>perfect</strong> for testing because dependencies aren't hard-coded. You can easily create mocks of your object's dependencies and pass them in on instantiation.
+
 Flow
 ------------
 
