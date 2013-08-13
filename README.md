@@ -29,6 +29,30 @@ var name = NameService.invoke();
 console.log(name.myMethod());
 ```
 
+Steps
+------------
+
+ * Create your object, specifying its dependencies:
+
+ ```javascript
+ var Cats = function($dogs, $mice) { }
+ ```
+
+ * Create the two dependencies (`$dogs` and `$mice` -- the back-tick should be omitted when registering dependencies):
+
+ ```javascript
+ needle.registerInjection('dogs', function() {});
+ needle.registerInjection('mice', function() {});
+ ```
+
+ * Instantiate the `Cats` object:
+
+ ```javascript
+ var cats = Cats.invoke();
+ ```
+
+ Voila! `cats` now has access to its dependencies -- `$dogs` and `$mice`!
+
 Arguments
 ------------
 
