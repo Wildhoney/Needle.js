@@ -74,7 +74,7 @@ Needle.js also provides a handful of bundled injectors which you can use straigh
 
 <table>
     <tr>
-        <th>Library/Framework</th>
+        <th>Name</th>
         <th>Injector Reference</th>
     <tr>
         <td>jQuery</td>
