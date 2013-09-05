@@ -67,6 +67,25 @@ var NameService = function() {
 NameService.invoke('Bob', 'Jack', 'Alan');
 ```
 
+Bundled Injectors
+------------
+
+Needle.js also provides a handful of bundled injectors which you can use straight away without even registering them!
+
+<table>
+    <tr>
+        <th>Library/Framework</th>
+        <th>Injector Reference</th>
+    <tr>
+        <td>jQuery</td>
+        <td>$j</td>
+    </tr>
+    <tr>
+        <td>Underscore</td>
+        <td>$u</td>
+    </tr>
+</table>
+
 Getting Started
 ------------
 
