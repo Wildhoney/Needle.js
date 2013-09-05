@@ -70,7 +70,7 @@ NameService.invoke('Bob', 'Jack', 'Alan');
 Bundled Injectors
 ------------
 
-Needle.js also provides a handful of bundled injectors which you can use straight away without even registering them!
+Needle.js also provides a handful of bundled injectors which you can use straight away without even registering them! Libraries/frameworks that we support must be included before the loading of Needle.
 
 <table>
     <tr>
