@@ -14,5 +14,13 @@
     "bower_components",
     "test",
     "tests"
+  ],
+  "keywords": [
+    "dependency injection",
+    "angular dependency",
+    "injection",
+    "injection object",
+    "injection modules",
+    "injection dependencies"
   ]
 }

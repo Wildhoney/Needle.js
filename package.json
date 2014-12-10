@@ -26,17 +26,12 @@
     "test": "grunt test"
   },
   "keywords": [
-    "dependency",
+    "dependency injection",
+    "angular dependency",
     "injection",
-    "angular",
-    "dependency",
-    "injection",
-    "injection",
-    "object",
-    "injection",
-    "modules",
-    "injection",
-    "depencencies"
+    "injection object",
+    "injection modules",
+    "injection dependencies"
   ],
   "license": "MIT"
 }
