@@ -6,7 +6,7 @@
  * Responsible for instantiating a new object, injecting any required dependencies.
  * @return {void}
  */
-Needle.prototype.invoke = function invoke(klass, constructorArgs) {
+Needle.prototype.invoke = Needle.prototype.new = function invoke(klass, constructorArgs) {
 
     // Transform the function's definition into a string so that we can parse its dependencies.
     var functionDefinition      = klass.toString().trim();
