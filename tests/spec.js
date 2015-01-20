@@ -2,7 +2,7 @@ describe('Needle.js', function() {
 
     describe('Injector', function() {
 
-        it('Can register injectors.', function() {
+        it('Should be able to register injectors;', function() {
             needle.registerInjector('my-helper-class', {});
             needle.registerInjector('my-other-helper-class', {});
             expect(needle.getInjectors()['my-helper-class']).toBeDefined();
@@ -13,14 +13,14 @@ describe('Needle.js', function() {
 
     describe('Invocation', function() {
 
-        it('Can inject dependencies into a simple helper.', function() {
+        it('Should be able to inject dependencies into a simple helper;', function() {
             needle.registerInjector('Example', function() {});
             var exampleInjector = needle.new(function($Example) { return $Example; });
             expect(exampleInjector).toBeDefined();
             expect(typeof exampleInjector).toEqual('function');
         });
 
-        it('Can inject two dependencies into a simple helper.', function() {
+        it('Should be able to inject two dependencies into a simple helper;', function() {
             needle.registerInjector('Example', function() {});
             needle.registerInjector('OtherExample', function() {});
             var exampleInjector = needle.new(function($Example, $OtherExample) { return [$Example, $OtherExample]; });
@@ -30,14 +30,14 @@ describe('Needle.js', function() {
             expect(typeof exampleInjector[1]).toEqual('function');
         });
 
-        it('Can inject dependencies into a commented helper.', function() {
+        it('Should be able to inject dependencies into a commented helper;', function() {
             needle.registerInjector('Example', function() {});
             var exampleInjector = needle.new(function(/*Example Arg: */ $Example) { return $Example; });
             expect(exampleInjector).toBeDefined();
             expect(typeof exampleInjector).toEqual('function');
         });
 
-        it('Can inject two dependencies into a commented helper.', function() {
+        it('Should be able to inject two dependencies into a commented helper;', function() {
             needle.registerInjector('Example', function() {});
             needle.registerInjector('OtherExample', function() {});
             var exampleInjector = needle.new(/* Mmmkay */ function(/*Example Arg: */ $Example/*After... */, /** Another comment...**/$OtherExample) { return [$Example, $OtherExample]; });
@@ -51,7 +51,7 @@ describe('Needle.js', function() {
 
     describe('Inheritance', function() {
 
-        it('Can correctly set the `__proto__` property.', function() {
+        it('Should be able to correctly set the `__proto__` property;', function() {
             needle.registerInjector('HTTPModule', function() {});
             function Users($HTTPModule) { return $HTTPModule; }
             function People() {}
@@ -65,7 +65,7 @@ describe('Needle.js', function() {
 
     describe('Arguments', function() {
 
-        it('Can provide a list of arguments to the constructor', function() {
+        it('Should be able to provide a list of arguments to the constructor', function() {
             needle.registerInjector('HTTPModule', function() {});
             var Helper = function($HTTPModule) {
                 return {
@@ -87,7 +87,7 @@ describe('Needle.js', function() {
 
     describe('Prototype', function() {
 
-        it('Can set the `new` method on `Function.prototype`', function() {
+        it('Should be able to set the `new` method on `Function.prototype`', function() {
             expect(typeof function() {}.new).toEqual('undefined');
             needle.applyPrototypes();
             expect(typeof function() {}.new).toEqual('function');
