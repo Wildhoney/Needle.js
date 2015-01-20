@@ -21,15 +21,15 @@ Usage
 
 ```javascript
 needle.registerInjector('decorator', Decorator);
-var name = needle.invoke(NameService);
+var name = needle.new(NameService);
 console.log(name.myMethod());
 ```
 
-In addition to the `needle.invoke` way, if you invoke `needle.applyPrototypes` then you will have access to the `invoke` method on each one of your functions. Therefore the following would be possible:
+In addition to the `needle.new` way, if you invoke `needle.applyPrototypes` then you will have access to the `new` method on each one of your functions. Therefore the following would be possible:
 
 ```javascript
 needle.registerInjector('decorator', Decorator);
-var name = NameService.invoke();
+var name = NameService.new();
 console.log(name.myMethod());
 ```
 
@@ -52,7 +52,7 @@ Steps
  * Instantiate the `Cats` object:
 
  ```javascript
- var cats = Cats.invoke();
+ var cats = Cats.new();
  ```
 
  Voila! `cats` now has access to its dependencies -- `$dogs` and `$mice`!
@@ -60,13 +60,13 @@ Steps
 Arguments
 ------------
 
-If the `constructor` method exists on your invoked constructor, then Needle will automatically invoke that method for you upon instantiation. Any arguments which you supply to the `invoke` method will also be served to your constructor method as individual arguments:
+If the `constructor` method exists on your invoked constructor, then Needle will automatically invoke that method for you upon instantiation. Any arguments which you supply to the `new` method will also be served to your constructor method as individual arguments:
 
 ```javascript
 var NameService = function() {
     constructor: function(firstName, secondName, thirdName) { };
 }
-NameService.invoke('Bob', 'Jack', 'Alan');
+NameService.new('Bob', 'Jack', 'Alan');
 ```
 
 Bundled Injectors
