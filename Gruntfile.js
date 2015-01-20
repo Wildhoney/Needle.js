@@ -1,10 +1,14 @@
 module.exports = function(grunt) {
 
+    const MODULE_FILES = ['packages/Constructor.js', 'packages/New.js',
+                          'packages/Register.js', 'packages/Prototypes.js',
+                          'packages/Default.js'];
+
     grunt.initConfig({
 
         pkg: grunt.file.readJSON('package.json'),
         jshint: {
-            all: 'packages/needle.js/*.js',
+            all: 'packages/*.js',
             options: {
                 jshintrc: '.jshintrc'
             }
@@ -14,17 +18,13 @@ module.exports = function(grunt) {
                 banner: '/*! <%= pkg.name %> by <%= pkg.author %> created on <%= grunt.template.today("yyyy-mm-dd") %> */\n'
             },
             build: {
-                src: ['packages/needle.js/constructor.js', 'packages/needle.js/invoke.js',
-                      'packages/needle.js/register-injector.js', 'packages/needle.js/prototypes.js',
-                      'packages/needle.js/main.js'],
+                src: MODULE_FILES,
                 dest: 'dist/<%= pkg.name %>.min.js'
             }
         },
         jasmine: {
             pivotal: {
-                src: ['packages/needle.js/constructor.js', 'packages/needle.js/invoke.js',
-                      'packages/needle.js/register-injector.js', 'packages/needle.js/prototypes.js',
-                      'packages/needle.js/main.js'],
+                src: MODULE_FILES,
                 options: {
                     specs: 'tests/spec.js'
                 }

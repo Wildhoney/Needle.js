@@ -1,12 +1,12 @@
 /**
  * @module Needle
- * @method invoke
+ * @method new
  * @param klass {Object,String}
  * @param constructorArgs {Array}
  * Responsible for instantiating a new object, injecting any required dependencies.
- * @return {void}
+ * @return {Object}
  */
-Needle.prototype.invoke = Needle.prototype.new = function invoke(klass, constructorArgs) {
+Needle.prototype.new = function instantiate(klass, constructorArgs) {
 
     // Transform the function's definition into a string so that we can parse its dependencies.
     var functionDefinition      = klass.toString().trim();
