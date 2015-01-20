@@ -1,12 +1,19 @@
 Needle.js
 ============
-<img src="https://travis-ci.org/Wildhoney/Needle.js.png?branch=master" />
+
+![Travis](http://img.shields.io/travis/Wildhoney/Needle.js.svg?style=flat)
 &nbsp;
-<img src="https://badge.fury.io/js/needle-js.png" />
+![npm](http://img.shields.io/npm/v/needle-js.svg?style=flat)
+&nbsp;
+![License MIT](http://img.shields.io/badge/License-MIT-lightgrey.svg?style=flat)
+
+* **Bower:** `bower install needle-js`
 
 Isolated concept of <a href="http://docs.angularjs.org/api/AUTO.$injector" target="_blank">Angular's $injector</a> using <a href="http://en.wikipedia.org/wiki/Dependency_injection" target="_blank">dependency injection</a> and <a href="http://en.wikipedia.org/wiki/Reflection_(computer_programming)" target="_blank">reflection</a> for JavaScript constructors.
 
 Needle is <strong>perfect</strong> for testing because dependencies aren't hard-coded. You can easily create mocks of your object's dependencies and pass them in on instantiation.
+
+---
 
 Flow
 ------------
