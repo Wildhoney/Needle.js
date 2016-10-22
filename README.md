@@ -110,4 +110,4 @@ Once you've installed the dependencies and Grunt you can:
 Tests
 ------------
 
-All tests are written in <a href="http://pivotal.github.io/jasmine/">Jasmine</a> and can be run with `grunt test`.
+All tests are written in <a href="https://jasmine.github.io/">Jasmine</a> and can be run with `grunt test`.
